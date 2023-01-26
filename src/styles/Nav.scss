@@ -1,3 +1,20 @@
-nav {
-  background-color: cadetblue;
+.nav-container {
+  background-color: #822b45;
+  color: #f6f7eb;
+
+  .nav-logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-items {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 200px;
+    margin-right: 200px;
+    // .nav-links {
+    //   list-style: none;
+    //   display: inline-flex;
+    // }
+  }
 }
