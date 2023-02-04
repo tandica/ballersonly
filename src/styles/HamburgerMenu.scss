@@ -1,0 +1,25 @@
+.hamburger-menu-button {
+  display: none;
+}
+
+.nav-items {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 767px) {
+  .hamburger-menu-button {
+    display: block;
+  }
+  .nav-items {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+  }
+}
