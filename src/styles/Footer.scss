@@ -1,0 +1,35 @@
+.footer-container {
+  background-color: #822b45;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  box-shadow: 0px -1px 20px 5px rgba(0, 0, 0, 0.5);
+
+  .footer-items {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding-bottom: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+
+    a {
+      color: #f6f7eb;
+      text-decoration: none;
+
+      &:hover {
+        color: #888da7;
+      }
+    }
+  }
+
+  .footer-logo {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 255px;
+      height: auto;
+    }
+  }
+}

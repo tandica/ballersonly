@@ -1,5 +1,6 @@
 import React from "react";
 import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Players from "../components/Players";
@@ -11,13 +12,12 @@ export default function Home() {
     axios.get(`https://www.balldontlie.io/api/v1/players`).then((res) => {
       setPlayers(res.data.data);
       console.log(res.data.data);
-      console.log(typeof res.data.data);
     });
   }, []);
 
   return (
     <div>
-      <Nav></Nav>
+      <Nav />
       <ul>
         {Array.isArray(players) && players.length ? (
           <ul>
@@ -31,6 +31,7 @@ export default function Home() {
           <p>Loading...</p>
         )}
       </ul>
+      <Footer />
     </div>
   );
 }
