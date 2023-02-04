@@ -33,3 +33,23 @@
     }
   }
 }
+
+@media screen and (max-width: 576px) {
+  .footer-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    .footer-logo {
+      img {
+        width: 175px;
+      }
+    }
+
+    .footer-items {
+      margin-left: 0px;
+      margin-right: 0px;
+      padding-top: 10px;
+      font-size: 15px;
+    }
+  }
+}

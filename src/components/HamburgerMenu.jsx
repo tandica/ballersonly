@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import "../styles/HamburgerMenu.scss";
 
 export default function HamburgerMenu() {
   //open and close hamburger menu
@@ -9,15 +10,11 @@ export default function HamburgerMenu() {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
+    <div className="hamburger-menu-container">
       <button onClick={toggle} className="hamburger-menu-button">
         {/* <FontAwesomeIcon icon="fa-solid fa-bars" /> {isOpen ? " open" : ""} */}
         <i className={`fa-solid fa-bars ${isOpen ? " open" : ""}`} />
-        <FontAwesomeIcon
-          icon={faBars}
-          size="2x"
-          className="footer-social-icons"
-        />
+        <FontAwesomeIcon icon={faBars} size="1x" />
       </button>
       {isOpen && (
         <div className="nav-items">

@@ -22,6 +22,7 @@
     padding-top: 15px;
     font-family: "Kanit", sans-serif;
     font-weight: 500;
+    font-size: 17px;
 
     a {
       color: #f6f7eb;
@@ -30,6 +31,26 @@
       &:hover {
         color: #888da7;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .nav-container {
+    padding-top: 20px;
+    padding-bottom: 25px;
+
+    .nav-logo {
+      img {
+        width: 235px;
+      }
+    }
+
+    .nav-items {
+      margin-left: 0px;
+      margin-right: 0px;
+      padding-top: 10px;
+      font-size: 15px;
     }
   }
 }
