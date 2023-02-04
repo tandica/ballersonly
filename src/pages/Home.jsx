@@ -1,7 +1,6 @@
 import React from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import HamburgerMenu from "../components/HamburgerMenu";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Players from "../components/Players";
@@ -19,7 +18,6 @@ export default function Home() {
   return (
     <div>
       <Nav />
-      <HamburgerMenu />
       <ul>
         {Array.isArray(players) && players.length ? (
           <ul>
