@@ -29,30 +29,38 @@ export default function Home() {
           Explore everything related to stats, players, teams and games
         </p>
         <div className="home-circles-container">
-          <div className="home-circle-stats">
+          <div className="home-circle">
             <img
               src={statsHomepageImage}
               alt="Kobe Bryant playing basketball"
             />
-            <Link to="/stats">Stats</Link>
+            <Link to="/stats" className="home-circle-link">
+              STATS
+            </Link>
           </div>
-          <div className="home-circle-players">
+          <div className="home-circle">
             <img
               src={playersHomepageImage}
               alt="LeBron James shooting a basketball"
             />
-            <Link to="/stats">Stats</Link>
+            <Link to="/stats" className="home-circle-link">
+              PLAYERS
+            </Link>
           </div>
-          <div className="home-circle-teams">
+          <div className="home-circle">
             <img src={teamsHomepageImage} alt="Jayson Tatum pointing up" />
-            <Link to="/stats">Stats</Link>
+            <Link to="/stats" className="home-circle-link">
+              TEAMS
+            </Link>
           </div>
-          <div className="home-circle-games">
+          <div className="home-circle">
             <img
               src={gamesHomepageImage}
               alt="Ja Morant in the air, close to the rim"
             />
-            <Link to="/stats">Stats</Link>
+            <Link to="/stats" className="home-circle-link">
+              GAMES
+            </Link>
           </div>
         </div>
       </div>
