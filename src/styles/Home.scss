@@ -57,9 +57,10 @@
   }
 }
 
+// three layered triangles effect
 .home-triangle-dark {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   width: 0;
   height: 0;
   border-left: 50vw solid transparent;
@@ -74,7 +75,7 @@
   margin: 50px auto;
   background-color: #444c4a;
   bottom: 186px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .home-triangle-medium:after {
@@ -86,4 +87,25 @@
   border-left: 50vw solid transparent;
   border-right: 50vw solid transparent;
   border-top: 21vh solid #444c4a;
+}
+
+.home-triangle-light {
+  position: relative;
+  width: 100%;
+  height: 38px;
+  margin: 50px auto;
+  background-color: #4c5454;
+  bottom: 236px;
+  z-index: 1;
+}
+
+.home-triangle-light:after {
+  content: "";
+  position: absolute;
+  bottom: -136px;
+  width: 0;
+  height: 0;
+  border-left: 50vw solid transparent;
+  border-right: 50vw solid transparent;
+  border-top: 21vh solid #4c5454;
 }
