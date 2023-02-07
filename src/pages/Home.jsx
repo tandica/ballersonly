@@ -64,6 +64,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className="home-triangle-dark"></div>
+      <div className="home-triangle-medium"></div>
+      <div className="home-triangle-light"></div>
       <ul>
         {Array.isArray(players) && players.length ? (
           <ul>
