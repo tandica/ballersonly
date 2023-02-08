@@ -12,12 +12,24 @@ import "../styles/Home.scss";
 
 export default function Home() {
   const [players, setPlayers] = useState([]);
+  const [currentGames, setCurrentGames] = useState([]);
 
   useEffect(() => {
     axios.get(`https://www.balldontlie.io/api/v1/players`).then((res) => {
       setPlayers(res.data.data);
-      console.log(res.data.data);
+      // console.log(res.data.data);
     });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://www.balldontlie.io/api/v1/games?seasons[]=2018&team_ids[]=1`
+      )
+      .then((res) => {
+        setCurrentGames(res.data.data);
+        console.log(res.data.data);
+      });
   }, []);
 
   return (
@@ -68,6 +80,21 @@ export default function Home() {
         <div className="home-triangle-dark"></div>
         <div className="home-current-games">
           <h2 className="home-current-games-title">Current Games</h2>
+          <ul>
+            {Array.isArray(currentGames) && currentGames.length ? (
+              <ul>
+                {currentGames.map((games) => (
+                  <li key={games.id}>
+                    {games.home_team.full_name} vs.{" "}
+                    {games.visitor_team.full_name}
+                    {/* {player.first_name} {player.last_name} */}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p>No games are currently on ;(...</p>
+            )}
+          </ul>
         </div>
       </div>
       <ul>
