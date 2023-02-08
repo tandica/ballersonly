@@ -24,49 +24,52 @@ export default function Home() {
     <div>
       <Nav />
       <div className="home-container">
-        <h1 className="home-heading">Stay up to date on all things NBA</h1>
-        <p className="home-text">
-          Explore everything related to stats, players, teams and games
-        </p>
-        <div className="home-circles-container">
-          <div className="home-circle">
-            <img
-              src={statsHomepageImage}
-              alt="Kobe Bryant playing basketball"
-            />
-            <Link to="/stats" className="home-circle-link">
-              STATS
-            </Link>
-          </div>
-          <div className="home-circle">
-            <img
-              src={playersHomepageImage}
-              alt="LeBron James shooting a basketball"
-            />
-            <Link to="/stats" className="home-circle-link">
-              PLAYERS
-            </Link>
-          </div>
-          <div className="home-circle">
-            <img src={teamsHomepageImage} alt="Jayson Tatum pointing up" />
-            <Link to="/stats" className="home-circle-link">
-              TEAMS
-            </Link>
-          </div>
-          <div className="home-circle">
-            <img
-              src={gamesHomepageImage}
-              alt="Ja Morant in the air, close to the rim"
-            />
-            <Link to="/stats" className="home-circle-link">
-              GAMES
-            </Link>
+        <div className="home">
+          <h1 className="home-heading">Stay up to date on all things NBA</h1>
+          <p className="home-text">
+            Explore everything related to stats, players, teams and games
+          </p>
+          <div className="home-circles-container">
+            <div className="home-circle">
+              <img
+                src={statsHomepageImage}
+                alt="Kobe Bryant playing basketball"
+              />
+              <Link to="/stats" className="home-circle-link">
+                STATS
+              </Link>
+            </div>
+            <div className="home-circle">
+              <img
+                src={playersHomepageImage}
+                alt="LeBron James shooting a basketball"
+              />
+              <Link to="/stats" className="home-circle-link">
+                PLAYERS
+              </Link>
+            </div>
+            <div className="home-circle">
+              <img src={teamsHomepageImage} alt="Jayson Tatum pointing up" />
+              <Link to="/stats" className="home-circle-link">
+                TEAMS
+              </Link>
+            </div>
+            <div className="home-circle">
+              <img
+                src={gamesHomepageImage}
+                alt="Ja Morant in the air, close to the rim"
+              />
+              <Link to="/stats" className="home-circle-link">
+                GAMES
+              </Link>
+            </div>
           </div>
         </div>
+        <div className="home-triangle-dark"></div>
+        <div className="home-current-games">
+          <h2 className="home-current-games-title">Current Games</h2>
+        </div>
       </div>
-      <div className="home-triangle-dark"></div>
-      <div className="home-triangle-medium"></div>
-      <div className="home-triangle-light"></div>
       <ul>
         {Array.isArray(players) && players.length ? (
           <ul>
