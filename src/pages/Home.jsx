@@ -22,14 +22,25 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    axios
-      .get(
-        `https://www.balldontlie.io/api/v1/games?seasons[]=2018&team_ids[]=1`
-      )
-      .then((res) => {
-        setCurrentGames(res.data.data);
-        console.log(res.data.data);
-      });
+    axios.get(`https://www.balldontlie.io/api/v1/games`).then((res) => {
+      const getDate = res.data.data;
+
+      const today = new Date();
+      const todayISO = today.toISOString();
+      const todaysDateISO = todayISO.split("T")[0] + "T00:00:00.000Z";
+      console.log(todaysDateISO);
+
+      //if date === today then set current games
+      for (let i = 0; i < getDate.length; i++) {
+        // console.log(getDate[i].date);
+        const gameDate = getDate[i].date;
+        if (gameDate === todaysDateISO) {
+          console.log(true);
+        } else console.log(false);
+      }
+      setCurrentGames(res.data.data);
+      // console.log(res.data.data);
+    });
   }, []);
 
   return (
