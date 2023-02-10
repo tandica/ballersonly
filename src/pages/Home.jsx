@@ -23,29 +23,30 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get(
-        `https://www.balldontlie.io/api/v1/games?per_page=100&seasons[]=2022`
-      )
+      .get(`https://www.balldontlie.io/api/v1/games?per_page=50&seasons[]=2022`)
       .then((res) => {
-        const getDate = res.data.data;
+        const gameDate = res.data.data;
 
+        //get today's date and make it into an ISO string with proper format to compare to the one in the JSON obj
         const today = new Date();
         const todayISO = today.toISOString();
         const todaysDateISO = todayISO.split("T")[0] + "T00:00:00.000Z";
         console.log(todaysDateISO);
 
-        //if date === today then set current games
-        for (let i = 0; i < getDate.length; i++) {
+        for (let i = 0; i < gameDate.length; i++) {
           // console.log(getDate[i].date);
-          const gameDate = getDate[i].date;
-          if (gameDate === todaysDateISO) {
-            console.log(true, currentGames);
+          const dateofGame = gameDate[i].date;
+          //check if the date of the game is equal to day's date
+          if (dateofGame === todaysDateISO) {
+            console.log(true);
             setCurrentGames(res.data.data);
-          } else console.log(false, currentGames);
+          } else console.log(false);
         }
         // console.log(res.data.data);
       });
   }, []);
+
+  currentGames.map((getGames) => console.log(getGames.id));
 
   return (
     <div>
