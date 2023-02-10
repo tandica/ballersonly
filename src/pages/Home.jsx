@@ -22,25 +22,29 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    axios.get(`https://www.balldontlie.io/api/v1/games`).then((res) => {
-      const getDate = res.data.data;
+    axios
+      .get(
+        `https://www.balldontlie.io/api/v1/games?per_page=100&seasons[]=2022`
+      )
+      .then((res) => {
+        const getDate = res.data.data;
 
-      const today = new Date();
-      const todayISO = today.toISOString();
-      const todaysDateISO = todayISO.split("T")[0] + "T00:00:00.000Z";
-      console.log(todaysDateISO);
+        const today = new Date();
+        const todayISO = today.toISOString();
+        const todaysDateISO = todayISO.split("T")[0] + "T00:00:00.000Z";
+        console.log(todaysDateISO);
 
-      //if date === today then set current games
-      for (let i = 0; i < getDate.length; i++) {
-        // console.log(getDate[i].date);
-        const gameDate = getDate[i].date;
-        if (gameDate === todaysDateISO) {
-          console.log(true);
-        } else console.log(false);
-      }
-      setCurrentGames(res.data.data);
-      // console.log(res.data.data);
-    });
+        //if date === today then set current games
+        for (let i = 0; i < getDate.length; i++) {
+          // console.log(getDate[i].date);
+          const gameDate = getDate[i].date;
+          if (gameDate === todaysDateISO) {
+            console.log(true, currentGames);
+            setCurrentGames(res.data.data);
+          } else console.log(false, currentGames);
+        }
+        // console.log(res.data.data);
+      });
   }, []);
 
   return (
