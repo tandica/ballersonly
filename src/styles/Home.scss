@@ -9,6 +9,8 @@
   .home {
     background-color: #303633;
     padding-top: 4em;
+    position: relative;
+    z-index: 4;
 
     .home-heading {
       margin: 0;
@@ -35,6 +37,11 @@
         img {
           width: 200px;
           height: auto;
+          transition: transform 0.2s;
+        }
+
+        img:hover {
+          transform: scale(1.2);
         }
 
         .home-circle-link {

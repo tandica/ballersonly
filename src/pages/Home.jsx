@@ -59,35 +59,43 @@ export default function Home() {
           </p>
           <div className="home-circles-container">
             <div className="home-circle">
-              <img
-                src={statsHomepageImage}
-                alt="Kobe Bryant playing basketball"
-              />
+              <a href="/stats">
+                <img
+                  src={statsHomepageImage}
+                  alt="Kobe Bryant playing basketball"
+                />
+              </a>
               <Link to="/stats" className="home-circle-link">
                 STATS
               </Link>
             </div>
             <div className="home-circle">
-              <img
-                src={playersHomepageImage}
-                alt="LeBron James shooting a basketball"
-              />
-              <Link to="/stats" className="home-circle-link">
+              <a href="/players">
+                <img
+                  src={playersHomepageImage}
+                  alt="LeBron James shooting a basketball"
+                />
+              </a>
+              <Link to="/players" className="home-circle-link">
                 PLAYERS
               </Link>
             </div>
             <div className="home-circle">
-              <img src={teamsHomepageImage} alt="Jayson Tatum pointing up" />
-              <Link to="/stats" className="home-circle-link">
+              <a href="/teams">
+                <img src={teamsHomepageImage} alt="Jayson Tatum pointing up" />
+              </a>
+              <Link to="/teams" className="home-circle-link">
                 TEAMS
               </Link>
             </div>
             <div className="home-circle">
-              <img
-                src={gamesHomepageImage}
-                alt="Ja Morant in the air, close to the rim"
-              />
-              <Link to="/stats" className="home-circle-link">
+              <a href="/games">
+                <img
+                  src={gamesHomepageImage}
+                  alt="Ja Morant in the air, close to the rim"
+                />
+              </a>
+              <Link to="/games" className="home-circle-link">
                 GAMES
               </Link>
             </div>
