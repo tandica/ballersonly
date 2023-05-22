@@ -15,10 +15,21 @@ export default function Home() {
   const [currentGames, setCurrentGames] = useState([]);
 
   useEffect(() => {
-    axios.get(`https://www.balldontlie.io/api/v1/players`).then((res) => {
-      setPlayers(res.data.data);
-      // console.log(res.data.data);
-    });
+    axios
+      .get(`https://www.balldontlie.io/api/v1/players?per_page=100`)
+      .then((res) => {
+        // console.log(res.data.data);
+        // setPlayers(res.data.data);
+        const { data } = res;
+        const playerData = data.data;
+        // console.log(playerData);
+        const randomIndex = Math.floor(Math.random() * playerData.length);
+        const playerOfTheWeek = playerData[randomIndex];
+        console.log(playerOfTheWeek);
+        console.log(typeof playerOfTheWeek);
+
+        setPlayers(playerData[randomIndex]);
+      });
   }, []);
 
   useEffect(() => {
@@ -31,16 +42,17 @@ export default function Home() {
         const today = new Date();
         const todayISO = today.toISOString();
         const todaysDateISO = todayISO.split("T")[0] + "T00:00:00.000Z";
-        console.log(todaysDateISO);
+        // console.log(todaysDateISO);
 
         for (let i = 0; i < gameDate.length; i++) {
           // console.log(getDate[i].date);
           const dateofGame = gameDate[i].date;
           //check if the date of the game is equal to day's date
           if (dateofGame === todaysDateISO) {
-            console.log(true);
+            // console.log(true);
             setCurrentGames(res.data.data);
-          } else console.log(false);
+          }
+          // else console.log(false);
         }
         // console.log(res.data.data);
       });
